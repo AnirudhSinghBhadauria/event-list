@@ -6,10 +6,11 @@ export const getEventData = async () => {
   });
   const result: Event[] = await res.json();
 
-  // filter this result array for today's events, this weeks events and upcoming events!
+  // filter this result array for today's events, 
+  // this week's events and upcoming events!
 
   // today;
-  let todaysEvents = result.filter(
+  const todaysEvents = result.filter(
     ({ date }) => new Date(date).getDate() === new Date().getDate()
   );
 
@@ -18,7 +19,7 @@ export const getEventData = async () => {
     new Date().setDate(new Date().getDate() - new Date().getDay() + 6)
   );
 
-  let upcomingEvents = result.filter(
+  const upcomingEvents = result.filter(
     ({ date }) => new Date(date) > new Date(lastDayOfWeek)
   );
 
@@ -27,7 +28,7 @@ export const getEventData = async () => {
     new Date().setDate(new Date().getDate() - new Date().getDay())
   );
 
-  let weeksEvents = result.filter(
+  const weeksEvents = result.filter(
     ({ date }) =>
       new Date(date) >= firstDayOfWeek &&
       new Date(date) <= lastDayOfWeek &&
