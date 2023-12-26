@@ -25,7 +25,7 @@ const Home = async () => {
           description="Join us for an exhilarating day filled with creativity!"
           type="today"
         />
-        <div className="w-full flex flex-row items-center border-[0px] border-black mt-5 mb-14 py-3 overflow-x-scroll space-x-3  scrollbar-track-transparent scrollbar-thumb-[#e5e7eb] scrollbar-thin event-scrollbar">
+        <div className="w-full flex flex-row items-center border-[0px] border-black mt-5 mb-14 py-3 overflow-x-scroll space-x-3  scrollbar-track-transparent scrollbar-thumb-[#e5e7eb] scrollbar-thin">
           {todaysEvents.map(({ id, name, date, description, location }) => (
             <EventCard
               key={id}
@@ -43,7 +43,7 @@ const Home = async () => {
           description="This week promises an exciting array of experiences!"
           type="week"
         />
-        <div className="w-full flex flex-row items-center border-[0px] border-black mt-5 mb-14 py-3 overflow-x-scroll space-x-3 scrollbar-track-transparent scrollbar-thumb-[#e5e7eb] scrollbar-thin event-scrollbar">
+        <div className="w-full flex flex-row items-center border-[0px] border-black mt-5 mb-14 py-3 overflow-x-scroll space-x-3 scrollbar-track-transparent scrollbar-thumb-[#e5e7eb] scrollbar-thin">
           {weeksEvents.map(({ id, name, date, description, location }) => (
             <EventCard
               key={id}
@@ -60,7 +60,7 @@ const Home = async () => {
           description="Get ready for a lineup of captivating events on the horizon!"
           type="upcoming"
         />
-        <div className="w-full flex flex-row items-center border-[0px] border-black mt-5 mb-14 py-3 overflow-x-scroll space-x-3 scrollbar-track-transparent scrollbar-thumb-[#e5e7eb] scrollbar-thin event-scrollbar">
+        <div className="w-full flex flex-row items-center border-[0px] border-black mt-5 mb-14 py-3 overflow-x-scroll space-x-3 scrollbar-track-transparent scrollbar-thumb-[#e5e7eb] scrollbar-thin">
           {upcomingEvents.map(({ id, name, date, description, location }) => (
             <EventCard
               key={id}
