@@ -15,6 +15,15 @@ const EventCard = ({
   location: string;
   id: number;
 }) => {
+  const dateOfEvent = new Date(date).toDateString().toString();
+  const timeOfEvent = new Date(date)
+    .toLocaleString("hi-IN", {
+      hour12: true,
+      hour: "2-digit",
+      minute: "2-digit",
+    })
+    .toUpperCase();
+
   return (
     <div className="flex flex-col justify-between min-w-fit rounded-xl border-[1px] event-card-global h-48">
       <div className="flex flex-row space-x-4 gap-4 items-start p-6">
@@ -36,18 +45,8 @@ const EventCard = ({
       <div className="pt-0 p-6 flex flex-row items-center">
         <Location />
         <p className="text-sm ml-2">{location}</p>
-        <p className="text-sm ml-3">
-          {new Date(date).toDateString().toString()}
-        </p>
-        <p className="text-sm ml-3">
-          {new Date(date)
-            .toLocaleString("hi-IN", {
-              hour12: true,
-              hour: "2-digit",
-              minute: "2-digit",
-            })
-            .toUpperCase()}
-        </p>
+        <p className="text-sm ml-3">{dateOfEvent}</p>
+        <p className="text-sm ml-3">{timeOfEvent}</p>
       </div>
     </div>
   );

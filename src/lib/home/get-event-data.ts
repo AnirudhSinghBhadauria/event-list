@@ -4,9 +4,14 @@ export const getEventData = async () => {
   const res = await fetch(`${process.env.NEXT_EVENT_DATA}`, {
     cache: "force-cache",
   });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
   const result: Event[] = await res.json();
 
-  // filter this result array for today's events, 
+  // filter this result array for today's events,
   // this week's events and upcoming events!
 
   // today;
