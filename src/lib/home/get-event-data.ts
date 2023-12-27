@@ -2,7 +2,7 @@ import { Event } from "@/utils/interfaces";
 
 export const getEventData = async () => {
   const res = await fetch(`${process.env.NEXT_EVENT_DATA}`, {
-    cache: "force-cache",
+    next: { revalidate: 3600 },
   });
 
   if (!res.ok) {
@@ -37,6 +37,7 @@ export const getEventData = async () => {
     ({ date }) =>
       new Date(date) >= firstDayOfWeek &&
       new Date(date) <= lastDayOfWeek &&
+      new Date().getDate() <= new Date(date).getDate() &&
       new Date().getDate() !== new Date(date).getDate()
   );
 
